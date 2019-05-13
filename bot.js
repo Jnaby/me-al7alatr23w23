@@ -356,6 +356,17 @@ bot.on('message', (message) => {
 
 
 
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag} !`);
+ 
+});
+ 
+client.on('guildMemberAdd',async member => {
+  if(member.guild.id !== '518756105166520320') return;
+  setTimeout(function(){
+  member.guild.channels.find(r => r.id === '572261532646375425').send('_Welcome To_ **drip**.');
+},4000);
+});
 
 
 
